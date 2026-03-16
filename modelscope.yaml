@@ -1,0 +1,34 @@
+# ModelScope Configuration
+# 魔搭创空间配置文件
+
+# 应用信息
+name: CoPaw
+sdk: docker
+sdk_version: "1.0"
+
+# Docker 配置
+docker:
+  dockerfile: Dockerfile
+  port: 7860
+
+# 环境变量 (可在魔搭界面配置)
+environment:
+  COPAW_PORT: "7860"
+  COPAW_WORKING_DIR: "/app/working"
+  COPAW_SECRET_DIR: "/app/working.secret"
+  COPAW_DISABLE_DESKTOP: "1"
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+
+# 资源要求
+resources:
+  cpu: 2
+  memory: 4Gi
+  storage: 10Gi
+
+# 健康检查
+health_check:
+  path: /
+  port: 7860
+  initial_delay: 60
+  period: 30
+  timeout: 10
