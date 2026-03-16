@@ -1,0 +1,41 @@
+# CoPaw Requirements for ModelScope Studio
+# Generated from pyproject.toml
+
+# Core dependencies
+agentscope==1.0.16.dev0
+agentscope-runtime==1.1.0
+httpx>=0.27.0
+packaging>=24.0
+uvicorn>=0.40.0
+fastapi>=0.100.0
+
+# Channel integrations
+discord-py>=2.3
+dingtalk-stream>=0.24.3
+lark-oapi>=1.5.3
+python-telegram-bot>=20.0
+twilio>=9.10.2
+paho-mqtt>=2.0.0
+matrix-nio>=0.24.0
+
+# Task scheduling
+apscheduler>=3.11.2,<4
+
+# Browser automation
+playwright>=1.49.0
+
+# AI/ML
+reme-ai==0.3.0.6b3
+transformers>=4.30.0
+onnxruntime<1.24
+
+# Utilities
+questionary>=2.1.1
+mss>=9.0.0
+python-dotenv>=1.0.0
+python-socks>=2.5.3
+pywebview>=4.0
+aiofiles>=24.1.0
+
+# WeCom channel (custom wheel)
+wecom-aibot-sdk @ https://agentscope.oss-cn-zhangjiakou.aliyuncs.com/pre_whl/wecom_aibot_sdk-1.0.0-py3-none-any.whl
