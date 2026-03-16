@@ -15,6 +15,7 @@ import "dayjs/locale/ru";
 import MainLayout from "./layouts/MainLayout";
 import "./styles/layout.css";
 import "./styles/form-override.css";
+import "./styles/mobile.css";
 
 const antdLocaleMap: Record<string, Locale> = {
   zh: zhCN,

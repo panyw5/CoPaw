@@ -40,7 +40,8 @@
     "environments": "環境変数",
     "security": "セキュリティ",
     "tokenUsage": "トークン使用量",
-    "tools": "ツール"
+    "tools": "ツール",
+    "more": "もっと"
   },
   "workspace": {
     "title": "ワークスペース",

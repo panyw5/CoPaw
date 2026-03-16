@@ -38,6 +38,12 @@ body {
   padding: 0 24px 24px 24px;
 }
 
+@media (max-width: 768px) {
+  .page-content {
+    padding: 0 12px 68px 12px !important;
+  }
+}
+
 .table-container {
   height: 100%;
   overflow: hidden;

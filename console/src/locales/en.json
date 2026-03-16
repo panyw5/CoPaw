@@ -41,7 +41,8 @@
     "models": "Models",
     "environments": "Environments",
     "security": "Security",
-    "tokenUsage": "Token Usage"
+    "tokenUsage": "Token Usage",
+    "more": "More"
   },
   "workspace": {
     "title": "WorkSpace",

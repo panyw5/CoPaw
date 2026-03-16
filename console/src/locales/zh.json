@@ -41,7 +41,8 @@
     "models": "模型",
     "environments": "环境变量",
     "security": "安全",
-    "tokenUsage": "Token 消耗"
+    "tokenUsage": "Token 消耗",
+    "more": "更多"
   },
   "workspace": {
     "title": "工作区",

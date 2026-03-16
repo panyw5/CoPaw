@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
+import MobileTabBar from "../MobileTabBar";
 import ConsoleCronBubble from "../../components/ConsoleCronBubble";
 import styles from "../index.module.less";
 import Chat from "../../pages/Chat";
@@ -89,6 +90,7 @@ export default function MainLayout() {
           </div>
         </Content>
       </Layout>
+      <MobileTabBar selectedKey={selectedKey} />
     </Layout>
   );
 }
