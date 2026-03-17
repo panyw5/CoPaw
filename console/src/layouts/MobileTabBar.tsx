@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Drawer, Menu } from "antd";
+import { Drawer, Menu, Space } from "antd";
 import { useTranslation } from "react-i18next";
 import {
   MessageCircle,
@@ -19,6 +19,7 @@ import {
   Shield,
   BarChart3,
 } from "lucide-react";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 import styles from "./MobileTabBar.module.less";
 
 const MAIN_TABS = [
@@ -133,13 +134,18 @@ export default function MobileTabBar({ selectedKey }: MobileTabBarProps) {
         title={t("nav.more")}
         className={styles.moreDrawer}
       >
-        <Menu
-          mode="inline"
-          selectedKeys={[selectedKey]}
-          onClick={handleMoreMenuClick}
-          items={moreMenuItems}
-          className={styles.moreMenu}
-        />
+        <Space direction="vertical" style={{ width: "100%" }} size="middle">
+          <Menu
+            mode="inline"
+            selectedKeys={[selectedKey]}
+            onClick={handleMoreMenuClick}
+            items={moreMenuItems}
+            className={styles.moreMenu}
+          />
+          <div className={styles.languageSwitcherWrapper}>
+            <LanguageSwitcher />
+          </div>
+        </Space>
       </Drawer>
     </>
   );

@@ -1,6 +1,6 @@
 .agentsPage {
-  padding: 24px;
-  height: calc(100vh - 96px);
+  padding: 8px 0 0 0;
+  height: calc(100vh - 72px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -8,10 +8,40 @@
 
 .header {
   flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 8px;
 }
 
 .title {
-  margin-bottom: 4px;
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  order: 1;
+}
+
+.workspacePath {
+  margin: 0;
+  font-size: 12px;
+  color: #999;
+  font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1;
+  order: 2;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+  order: 3;
 }
 
 .description {
@@ -22,15 +52,14 @@
 
 .content {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex: 1;
   min-height: 0;
   overflow: auto;
-  padding-bottom: 12px;
 }
 
 .fileListPanel {
-  width: 400px;
+  width: 280px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -55,7 +84,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 30px;
 }
 
 .headerRow {
@@ -70,7 +98,7 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
 .sectionTitle {
@@ -89,14 +117,13 @@
 
 .workspacePath {
   margin: 0;
-  margin-bottom: 12px;
   font-size: 12px;
-  color: #666;
+  color: #999;
   font-family: monospace;
-  flex-shrink: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .divider {
@@ -165,7 +192,7 @@
 }
 
 .editorHeader {
-  padding: 16px;
+  padding: 8px 12px;
   border-bottom: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
@@ -192,8 +219,8 @@
 }
 
 .editorContent {
-  padding: 16px;
-  height: calc(100% - 96px);
+  padding: 8px 12px;
+  height: calc(100% - 56px);
 
   textarea {
     font-family: monospace;
@@ -221,7 +248,7 @@
   height: 100%;
   overflow: auto;
   border: 1px solid #e8e8e8;
-  padding: 16px;
+  padding: 12px;
   border-radius: 8px;
 }
 
@@ -408,33 +435,106 @@
 // ─── Mobile Responsive ────────────────────────────────────────────────────────
 @media (max-width: 768px) {
   .agentsPage {
-    padding: 12px;
+    padding: 8px 0 0 0;
     height: auto;
+  }
+
+  // Page header: title + buttons on line 1, path on line 2
+  .title {
+    order: 1;
+  }
+
+  .actionButtons {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .workspacePath {
+    order: 3;
+    flex-basis: 100%;
   }
 
   .content {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .fileListPanel {
     width: 100%;
     max-height: 50vh;
+
+    :global(.copaw-card) {
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+
+    :global(.copaw-card-body) {
+      padding: 0 !important;
+    }
   }
 
-  .workspaceInfo {
+  .fileItem {
+    border-radius: 6px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .headerRow {
+    padding: 0 4px;
+    margin-bottom: 8px;
+  }
+
+  .infoText {
+    padding: 0 4px;
+  }
+
+  .divider {
+    margin-bottom: 8px;
+  }
+
+  .editorCard {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .editorHeader {
+    padding: 6px 4px;
     flex-direction: column;
     align-items: flex-start;
-    height: auto;
-    gap: 8px;
+    gap: 4px;
   }
 
-  .workspacePath {
-    width: 100%;
+  .fileName {
+    font-size: 14px;
+    margin-bottom: 0;
   }
 
-  .actionButtons {
+  .filePath {
+    margin-bottom: 2px;
+  }
+
+  .buttonGroup {
     width: 100%;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .editorContent {
+    padding: 4px;
+  }
+
+  .textarea {
+    height: 60vh !important;
+    min-height: 300px !important;
+    max-height: none !important;
+    width: 100% !important;
+  }
+
+  .markdownViewer {
+    padding: 8px;
+    min-height: 40vh;
   }
 }

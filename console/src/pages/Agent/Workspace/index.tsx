@@ -106,36 +106,33 @@ export default function WorkspacePage() {
     <div className={styles.agentsPage}>
       <div className={styles.header}>
         <h1 className={styles.title}>{t("workspace.title")}</h1>
-        <div className={styles.workspaceInfo}>
-          <p className={styles.workspacePath}>
-            {t("workspace.workspacePath")}{" "}
-            {workspacePath ||
-              (files.length === 0
-                ? t("workspace.noFiles")
-                : t("common.loading"))}
-          </p>
-          <div className={styles.actionButtons}>
-            <Tooltip
-              title={t("workspace.uploadTooltip")}
-              placement="top"
-              mouseEnterDelay={0.5}
-            >
-              <Button
-                size="small"
-                onClick={handleUploadClick}
-                icon={<UploadOutlined />}
-              >
-                {t("common.upload")}
-              </Button>
-            </Tooltip>
+        <span className={styles.workspacePath}>
+          {workspacePath ||
+            (files.length === 0
+              ? t("workspace.noFiles")
+              : t("common.loading"))}
+        </span>
+        <div className={styles.actionButtons}>
+          <Tooltip
+            title={t("workspace.uploadTooltip")}
+            placement="top"
+            mouseEnterDelay={0.5}
+          >
             <Button
               size="small"
-              onClick={handleDownload}
-              icon={<DownloadOutlined />}
+              onClick={handleUploadClick}
+              icon={<UploadOutlined />}
             >
-              {t("common.download")}
+              {t("common.upload")}
             </Button>
-          </div>
+          </Tooltip>
+          <Button
+            size="small"
+            onClick={handleDownload}
+            icon={<DownloadOutlined />}
+          >
+            {t("common.download")}
+          </Button>
         </div>
       </div>
 
@@ -164,8 +161,6 @@ export default function WorkspacePage() {
           onReset={handleReset}
         />
       </div>
-
-      <p className={styles.attribution}>{t("workspace.attribution")}</p>
 
       {/* Hidden file input - only accepts .zip files up to 100MB */}
       <input

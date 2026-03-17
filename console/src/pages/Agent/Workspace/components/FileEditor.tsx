@@ -70,6 +70,26 @@ export const FileEditor: React.FC<FileEditorProps> = ({
                 <div className={styles.filePath}>{selectedFile.path}</div>
               </div>
               <div className={styles.buttonGroup}>
+                {isMarkdownFile && (
+                  <>
+                    <div className={styles.markdownToggle}>
+                      <span className={styles.toggleLabel}>
+                        {t("common.preview")}
+                      </span>
+                      <Switch
+                        checked={showMarkdown}
+                        onChange={setShowMarkdown}
+                        size="small"
+                      />
+                    </div>
+                    <Button
+                      icon={<CopyOutlined />}
+                      type="text"
+                      onClick={copyToClipboard}
+                      className={styles.copyButton}
+                    />
+                  </>
+                )}
                 <Button
                   size="small"
                   onClick={onReset}
@@ -92,29 +112,6 @@ export const FileEditor: React.FC<FileEditorProps> = ({
             </div>
 
             <div className={styles.editorContent}>
-              <div className={styles.contentLabel}>
-                <div>{t("common.content")}</div>
-                {isMarkdownFile && (
-                  <div className={styles.buttonGroup}>
-                    <div className={styles.markdownToggle}>
-                      <span className={styles.toggleLabel}>
-                        {t("common.preview")}
-                      </span>
-                      <Switch
-                        checked={showMarkdown}
-                        onChange={setShowMarkdown}
-                        size="small"
-                      />
-                    </div>
-                    <Button
-                      icon={<CopyOutlined />}
-                      type="text"
-                      onClick={copyToClipboard}
-                      className={styles.copyButton}
-                    />
-                  </div>
-                )}
-              </div>
               {showMarkdown && isMarkdownFile ? (
                 <XMarkdown
                   content={markdownContent}

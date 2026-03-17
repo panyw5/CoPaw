@@ -71,7 +71,7 @@ export const FileListPanel: React.FC<FileListPanelProps> = ({
     <div className={styles.fileListPanel}>
       <Card
         bodyStyle={{
-          padding: 16,
+          padding: 12,
           display: "flex",
           flexDirection: "column",
           height: "100%",
